@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 import sqlite3
 def getData():
-	conn=sqlite3.connect('E:\\MyProgress\\Curie Labs\\webserver\\sensorsData.db')
+	conn=sqlite3.connect('sensorsData.db')
 	curs=conn.cursor()
 	for row in curs.execute("SELECT * FROM cur_data ORDER BY timestamp DESC LIMIT 1"):
 		time = str(row[0])
