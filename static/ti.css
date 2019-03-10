@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Major+Mono+Display');
+@import url('https://fonts.googleapis.com/css?family=Bungee+Inline');
+body{
+  background-image: url("fd.jpg");
+  background-color: #cccccc;
+  height: 500px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.navbar{
+  width:100%;
+  height:70px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  background-color: black;
+  position: fixed;
+}
+#demo{
+  color: white;
+  font-size: 35px;
+  font-weight: bolder;
+  font-display: fallback;
+  font-family: Major Mono Display;
+  float: left;
+  text-decoration: none;
+  padding: 15px;
+}
+#demo1{
+  float: right;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  right: 10px;
+  font-size: 15px;
+  font-family: Bungee Inline;
+  color: #3498db;
+}
+#demo2{
+  float: right;
+  text-decoration: none;
+  padding: 15px;
+  position: relative;
+  right: 20px;
+  font-size: 15px;
+  font-family: Bungee Inline;
+  color: white;
+}
+#g1,
+#g2,#g3,#g4,#g5,#g6 {
+  width: 180px;
+  height: 160px;
+  display: inline-block;
+  margin: 1em;
+}
+#g7,
+#g8,#g9,#g10,#g11,#g12 {
+  width: 180px;
+  height: 160px;
+  display: inline-block;
+  margin: 1em;
+}
+fieldset {
+  display: block;
+  margin-left: 2px;
+  margin-right: 2px;
+  padding-top: 0.35em;
+  padding-bottom: 0.625em;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
+  border: 2px groove (internal value);
+}
