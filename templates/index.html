@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+<head>
+  <title>Curie Labs</title>
+  <link rel="stylesheet" href='../static/ti.css'/>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <style>
+  body {
+    text-align: center;
+  }
+</style>
+</head>
+<body>
+  <center>
+    <div class="navbar">
+      <a href="#" id="demo"></a>
+      <a class="si" id="demo1" href="/">REFRESH</a>
+      <a class="arm" id="demo2">{{time}}</a>
+    </div><br><br><br><br><br>
+  </center>
+  <fieldset>
+    <legend><b>Inside</legend>
+    <div id="g1"></div>
+    <div id="g2"></div>
+    <div id="g3"></div>
+    <div id="g4"></div>
+    <div id="g5"></div>
+    <div id="g6"></div></fieldset><br>
+    <fieldset>
+      <legend>Outside</legend>
+      <div id="g7"></div>
+      <div id="g8"></div>
+      <div id="g9"></div>
+      <div id="g10"></div>
+      <div id="g11"></div>
+      <div id="g12"></div>
+    </fieldset>
+    <p> @2019 Curie Labs</p>
+
+    <script src="../static/raphael-2.1.4.min.js"></script>
+    <script src="../static/jg.js"></script>
+    <script>
+    var g1,g2,g3,g4,g5,g6,g7,g8,g9,g10,g11,g12;
+    document.addEventListener("DOMContentLoaded", function(event) {
+      g1 = new JustGage({
+        id: "g1",
+        value: {{temp}},
+        valueFontColor: "white",
+        min: -10,
+        max: 50,
+        title: "TEMPERATURE(C)",
+        titleFontColor: "white",
+        label: "Celsius",
+        relativeGaugeSize: true,
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g2 = new JustGage({
+        id: "g2",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min: 0,
+        max: 100,
+        title: "HUMIDITY(%)",
+        titleFontColor: "white",
+        label: "%",
+        relativeGaugeSize: true,
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g3 = new JustGage({
+        id: "g3",
+        value: {{hum}},
+        valueFontColor: "white",
+        min: 0,
+        max: 100,
+        title: "PRESSURE(hbar)",
+        titleFontColor: "white",
+        label: "hbar",
+        relativeGaugeSize: true,
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g4 = new JustGage({
+        id: "g4",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min: 0,
+        max: 100,
+        title: "AQI SCORE",
+        titleFontColor: "white",
+        label: "",
+        relativeGaugeSize: true,
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g5 = new JustGage({
+        id: "g5",
+        value: {{hum}},
+        valueFontColor: "white",
+        min: 0,
+        max: 100,
+        title: "AQI LEVEL",
+        titleFontColor: "white",
+        label: "%",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g6 = new JustGage({
+        id: "g6",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min:250,
+        max: 4000,
+        title: "Co2(PPM)",
+        titleFontColor: "white",
+        label: "PPM",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g7 = new JustGage({
+        id: "g7",
+        value: {{temp}},
+        valueFontColor: "white",
+        min: -10,
+        max: 50,
+        title: "TEMPERATURE(C)",
+        titleFontColor: "white",
+        label: "Celsius",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g8 = new JustGage({
+        id: "g8",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min: 0,
+        max: 100,
+        title: "HUMIDITY(%)",
+        titleFontColor: "white",
+        label: "%",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g9 = new JustGage({
+        id: "g9",
+        value: {{hum}},
+        valueFontColor: "white",
+        min: 0,
+        max: 100,
+        title: "PRESSURE(hbar)",
+        titleFontColor: "white",
+        label: "hbar",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g10 = new JustGage({
+        id: "g10",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min: 0,
+        max: 100,
+        title: "AQI SCORE",
+        titleFontColor: "white",
+        label: "",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g11 = new JustGage({
+        id: "g11",
+        value: {{hum}},
+        valueFontColor: "white",
+        min: 0,
+        max: 100,
+        title: "AQI LEVEL",
+        titleFontColor: "white",
+        label: "",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+      g12 = new JustGage({
+        id: "g12",
+        value: {{hum}},
+        valueFontColor: "yellow",
+        min: 250,
+        max: 4000,
+        title: "Co2(PPM)",
+        titleFontColor: "white",
+        label: "PPM",
+        startAnimationTime: 2000,
+        startAnimationType: ">",
+        refreshAnimationTime: 1000,
+        refreshAnimationType: "bounce",
+        relativeGaugeSize: true,
+        shadowOpacity: 1,
+        shadowSize: 5,
+        shadowVerticalOffset: 10
+      });
+    });
+    </script>
+    <script>
+    var i = 0;
+    var txt = 'Curie Labs';
+    var speed = 300;
+    window.onload = function(){
+
+      if (i < txt.length) {
+        document.getElementById("demo").innerHTML += txt.charAt(i);
+        i++;
+        setTimeout(window.onload,speed);
+      }
+    }
+  </script>
+</body>
+</html>
