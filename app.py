@@ -19,3 +19,5 @@ def index():
 		'hum': hum
 	}
 	return render_template('index.html', **templateData)
+if __name__ == "__main__":
+   app.run(debug=True)
