@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 app = Flask(__name__)
-server = app.server
 import sqlite3
 def getData():
 	conn=sqlite3.connect('E:\\MyProgress\\Curie Labs\\webserver\\sensorsData.db')
@@ -20,5 +19,3 @@ def index():
 		'hum': hum
 	}
 	return render_template('index.html', **templateData)
-if __name__ == "__main__":
-   app.run_server(debug=True)
